@@ -1,162 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gamer eSports</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamer eSports</title>
 
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
 
 <header class="header">
 
-<div class="profile">
+  <div class="logo">
+    <img src="assets/logo.png" alt="Logo">
+    <div>
+      <h2>Gamer eSports</h2>
+      <p>Free Fire Tournament</p>
+    </div>
+  </div>
 
-<img src="https://i.pravatar.cc/100" alt="">
-
-<div>
-<h2>Bhavy</h2>
-<p>ID : 2026001</p>
-</div>
-
-</div>
-
-<div class="header-right">
-
-<div class="notify">
-<i class="fa-solid fa-bell"></i>
-</div>
-
-<div class="wallet">
-₹250
-</div>
-
-</div>
+  <div class="wallet-box">
+    <i class="fa-solid fa-wallet"></i>
+    <span>₹0</span>
+  </div>
 
 </header>
 
-<section class="banner">
+<section class="slider">
 
-<div class="slide active">
-<img src="https://picsum.photos/800/300?1">
-</div>
+  <div class="slides fade">
+    <img src="assets/banner1.jpg">
+  </div>
 
-<div class="slide">
-<img src="https://picsum.photos/800/300?2">
-</div>
+  <div class="slides">
+    <img src="assets/banner2.jpg">
+  </div>
 
-<div class="slide">
-<img src="https://picsum.photos/800/300?3">
-</div>
-
-</section>
-
-<div class="marquee">
-<marquee>
-🔥 Welcome To Gamer eSports Tournament Platform 🔥
-</marquee>
-</div>
-
-<section class="balance">
-
-<p>Total Balance</p>
-
-<h1>₹250.00</h1>
-
-<div class="buttons">
-
-<button>Add Money</button>
-
-<button>Withdraw</button>
-
-</div>
+  <div class="slides">
+    <img src="assets/banner3.jpg">
+  </div>
 
 </section>
 
-<h2 class="title">Top Games</h2>
-
-<section class="games">
-
-<div class="game">
-🎮
-<p>Free Fire</p>
+<div class="notice">
+  <marquee>
+    🔥 Welcome to Gamer eSports • Daily Free Fire Tournaments • Instant Room ID • Fair Play Only 🔥
+  </marquee>
 </div>
 
-<div class="game">
-🏆
-<p>CS Ranked</p>
-</div>
+<section class="menu">
 
-<div class="game">
-⚔️
-<p>Lone Wolf</p>
-</div>
+  <div class="item">
+    <i class="fa-solid fa-trophy"></i>
+    <span>Tournament</span>
+  </div>
 
-<div class="game">
-🔥
-<p>BR Match</p>
-</div>
+  <div class="item">
+    <i class="fa-solid fa-wallet"></i>
+    <span>Wallet</span>
+  </div>
 
-<div class="game">
-👑
-<p>Custom</p>
-</div>
+  <div class="item">
+    <i class="fa-solid fa-user"></i>
+    <span>Profile</span>
+  </div>
 
-<div class="game">
-💣
-<p>Bomb Squad</p>
-</div>
-
-<div class="game">
-🎁
-<p>Events</p>
-</div>
+  <div class="item">
+    <i class="fa-solid fa-gift"></i>
+    <span>Refer</span>
+  </div>
 
 </section>
 
-<h2 class="title">Live Tournament</h2>
+<h2 class="heading">Live Tournaments</h2>
 
-<section class="cards">
+<section id="tournament-list">
+  <div class="tournament-card">
 
-<div class="card">
+  <img src="assets/ff.jpg" class="game-banner">
 
-<h3>Solo Match</h3>
+  <div class="card-content">
 
-<p>Prize ₹500</p>
+    <h3>Free Fire Solo Match</h3>
 
-<p>Entry ₹20</p>
+    <div class="details">
+      <span>💰 Entry: ₹20</span>
+      <span>🏆 Prize: ₹500</span>
+    </div>
 
-<button>JOIN</button>
+    <div class="details">
+      <span>👥 Slots: 48/50</span>
+      <span>⏰ 8:00 PM</span>
+    </div>
+
+    <button class="join-btn">
+      JOIN NOW
+    </button>
+
+  </div>
 
 </div>
 
-<div class="card">
+<div class="tournament-card">
 
-<h3>Duo Match</h3>
+  <img src="assets/ff.jpg" class="game-banner">
 
-<p>Prize ₹1200</p>
+  <div class="card-content">
 
-<p>Entry ₹40</p>
+    <h3>Free Fire Squad Match</h3>
 
-<button>JOIN</button>
+    <div class="details">
+      <span>💰 Entry: ₹50</span>
+      <span>🏆 Prize: ₹2000</span>
+    </div>
 
-</div>
+    <div class="details">
+      <span>👥 Slots: 20/25</span>
+      <span>⏰ 9:00 PM</span>
+    </div>
 
-<div class="card">
+    <button class="join-btn">
+      JOIN NOW
+    </button>
 
-<h3>Squad Match</h3>
-
-<p>Prize ₹3000</p>
-
-<p>Entry ₹80</p>
-
-<button>JOIN</button>
+  </div>
 
 </div>
 
@@ -164,28 +135,34 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
 <nav class="bottom-nav">
 
-<div>
-<i class="fa-solid fa-house"></i>
-<p>Home</p>
-</div>
+  <a href="#">
+    <i class="fa-solid fa-house"></i>
+    <span>Home</span>
+  </a>
 
-<div>
-<i class="fa-solid fa-trophy"></i>
-<p>Tournament</p>
-</div>
+  <a href="#">
+    <i class="fa-solid fa-trophy"></i>
+    <span>Matches</span>
+  </a>
 
-<div>
-<i class="fa-solid fa-wallet"></i>
-<p>Wallet</p>
-</div>
+  <a href="#">
+    <i class="fa-solid fa-wallet"></i>
+    <span>Wallet</span>
+  </a>
 
-<div>
-<i class="fa-solid fa-user"></i>
-<p>Profile</p>
-</div>
+  <a href="#">
+    <i class="fa-solid fa-user"></i>
+    <span>Profile</span>
+  </a>
 
 </nav>
+<footer class="footer">
 
+  <p>© 2026 Gamer eSports. All Rights Reserved.</p>
+
+</footer>
+
+<script type="module" src="firebase.js"></script>
 <script src="app.js"></script>
 
 </body>
