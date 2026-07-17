@@ -1,183 +1,268 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
 }
 
 body{
-background:#111;
-color:#fff;
-padding-bottom:90px;
+  background:#0f0f0f;
+  color:#fff;
+  padding-bottom:90px;
 }
 
 .header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px;
-background:#1b1b1b;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px;
+  background:#1a1a1a;
+  position:sticky;
+  top:0;
+  z-index:100;
 }
 
-.profile{
-display:flex;
-align-items:center;
-gap:10px;
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
-.profile img{
-width:50px;
-height:50px;
-border-radius:50%;
-border:2px solid #ff9800;
+.logo img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  border:2px solid gold;
 }
 
-.profile p{
-color:#aaa;
-font-size:12px;
+.logo h2{
+  color:#fff;
+  font-size:20px;
 }
 
-.header-right{
-display:flex;
-align-items:center;
-gap:10px;
+.logo p{
+  color:#aaa;
+  font-size:12px;
 }
 
-.notify{
-font-size:22px;
+.wallet-box{
+  background:gold;
+  color:#000;
+  padding:10px 18px;
+  border-radius:25px;
+  font-weight:bold;
 }
 
-.wallet{
-background:#ff9800;
-color:#000;
-padding:8px 16px;
-border-radius:30px;
-font-weight:bold;
+.slider{
+  width:100%;
+  overflow:hidden;
+  padding:15px;
 }
 
-.banner{
-padding:15px;
+.slides{
+  display:none;
 }
 
-.slide{
-display:none;
+.slides img{
+  width:100%;
+  border-radius:15px;
 }
 
-.slide.active{
-display:block;
+.fade{
+  display:block;
 }
 
-.slide img{
-width:100%;
-border-radius:12px;
+.notice{
+  background:gold;
+  color:#000;
+  padding:10px;
+  font-weight:bold;
 }
 
-.marquee{
-background:#ff9800;
-color:#000;
-padding:8px;
-font-weight:bold;
+.menu{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  padding:15px;
 }
 
-.balance{
-padding:20px;
+.item{
+  background:#1b1b1b;
+  border-radius:12px;
+  text-align:center;
+  padding:18px;
 }
 
-.balance h1{
-font-size:40px;
-margin:10px 0;
+.item i{
+  color:gold;
+  font-size:26px;
 }
 
-.buttons{
-display:flex;
-gap:10px;
+.item span{
+  display:block;
+  margin-top:8px;
+  font-size:13px;
 }
 
-.buttons button{
-flex:1;
-padding:12px;
-border:none;
-background:#ff9800;
-color:#000;
-border-radius:10px;
-font-weight:bold;
+.heading{
+  padding:15px;
+  font-size:22px;
+  color:gold;
+}
+#tournament-list{
+  padding:15px;
 }
 
-.title{
-padding:20px 15px 10px;
+.tournament-card{
+  background:#1b1b1b;
+  border-radius:18px;
+  overflow:hidden;
+  margin-bottom:18px;
+  border:1px solid #2a2a2a;
+  box-shadow:0 4px 12px rgba(0,0,0,.3);
 }
 
-.games{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-padding:15px;
+.game-banner{
+  width:100%;
+  height:170px;
+  object-fit:cover;
 }
 
-.game{
-background:#1b1b1b;
-border-radius:12px;
-padding:15px;
-text-align:center;
-font-size:28px;
+.card-content{
+  padding:15px;
 }
 
-.game p{
-margin-top:8px;
-font-size:13px;
-color:#fff;
+.card-content h3{
+  font-size:20px;
+  color:gold;
+  margin-bottom:12px;
 }
 
-.cards{
-padding:15px;
-display:flex;
-flex-direction:column;
-gap:15px;
+.details{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+  color:#ddd;
+  font-size:14px;
 }
 
-.card{
-background:#1b1b1b;
-padding:15px;
-border-radius:12px;
+.join-btn{
+  width:100%;
+  margin-top:12px;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:gold;
+  color:#000;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.card h3{
-margin-bottom:10px;
-}
-
-.card p{
-margin:6px 0;
-color:#ccc;
-}
-
-.card button{
-margin-top:10px;
-width:100%;
-padding:12px;
-background:#ff9800;
-border:none;
-border-radius:10px;
-font-weight:bold;
+.join-btn:hover{
+  opacity:.9;
 }
 
 .bottom-nav{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-display:flex;
-justify-content:space-around;
-background:#1b1b1b;
-padding:12px 0;
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  background:#1a1a1a;
+  display:flex;
+  justify-content:space-around;
+  padding:12px 0;
+  border-top:1px solid #333;
 }
 
-.bottom-nav div{
-text-align:center;
-font-size:12px;
+.bottom-nav a{
+  color:#fff;
+  text-decoration:none;
+  text-align:center;
+  font-size:12px;
 }
 
 .bottom-nav i{
+  display:block;
+  color:gold;
+  font-size:22px;
+  margin-bottom:5px;
+}
+
+.footer{
+  text-align:center;
+  padding:20px;
+  color:#888;
+  font-size:13px;
+}
+@media (max-width:768px){
+
+.logo h2{
+font-size:18px;
+}
+
+.logo p{
+font-size:11px;
+}
+
+.menu{
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+}
+
+.item{
+padding:14px;
+}
+
+.item i{
 font-size:22px;
-margin-bottom:4px;
-color:#ff9800;
+}
+
+.item span{
+font-size:11px;
+}
+
+.game-banner{
+height:150px;
+}
+
+.card-content h3{
+font-size:18px;
+}
+
+.details{
+font-size:13px;
+}
+
+.join-btn{
+padding:12px;
+font-size:15px;
+}
+
+.wallet-box{
+padding:8px 14px;
+font-size:14px;
+}
+
+.bottom-nav i{
+font-size:20px;
+}
+
+.bottom-nav a{
+font-size:11px;
+}
+
+}
+
+::-webkit-scrollbar{
+width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+background:gold;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+background:#111;
 }
