@@ -1,19 +1,51 @@
-const slides = document.querySelectorAll(".slide");
+// Gamer eSports App
 
-let index = 0;
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slides");
 
-function slider() {
+function showSlides() {
+  slides.forEach(slide => {
+    slide.style.display = "none";
+  });
 
-slides[index].classList.remove("active");
+  slideIndex++;
 
-index++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
 
-if(index >= slides.length){
-index = 0;
+  if (slides.length > 0) {
+    slides[slideIndex - 1].style.display = "block";
+  }
+
+  setTimeout(showSlides, 3000);
 }
 
-slides[index].classList.add("active");
+showSlides();
 
-}
+const tournaments = [
+  {
+    title: "Free Fire Solo",
+    entry: 20,
+    prize: 500,
+    slots: "48/50",
+    time: "8:00 PM"
+  },
+  {
+    title: "Free Fire Squad",
+    entry: 50,
+    prize: 2000,
+    slots: "20/25",
+    time: "9:00 PM"
+  }
+];
 
-setInterval(slider,3000);
+document.querySelectorAll(".join-btn").forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    alert(
+      "Tournament: " + tournaments[index].title +
+      "\nEntry: ₹" + tournaments[index].entry +
+      "\nPrize: ₹" + tournaments[index].prize
+    );
+  });
+});
