@@ -65,7 +65,9 @@ async function loadTournaments() {
     btn.addEventListener("click", () => {
 
       const tournament = querySnapshot.docs[index].data();
-
+      
+      console.log(tournament);
+      
       localStorage.setItem(
         "selectedTournament",
         JSON.stringify(tournament)
