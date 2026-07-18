@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournament Details</title>
+</head>
+<body>
+
+<h1>Tournament Details</h1>
+
+<h2 id="title"></h2>
+<p id="entry"></p>
+<p id="prize"></p>
+<p id="time"></p>
+<p id="slots"></p>
+
+<button id="joinBtn">Join Tournament</button>
+
+<script>
+const tournament = JSON.parse(localStorage.getItem("selectedTournament"));
+
+document.getElementById("title").innerText = tournament.Title;
+document.getElementById("entry").innerText = "Entry: ₹" + tournament.Entry;
+document.getElementById("prize").innerText = "Prize: ₹" + tournament.Prize;
+document.getElementById("time").innerText = "Time: " + tournament.Time;
+document.getElementById("slots").innerText = "Slots: " + tournament.Slots;
+
+document.getElementById("joinBtn").onclick = () => {
+  alert("Tournament Join Successfully!");
+};
+</script>
+
+</body>
+</html>
