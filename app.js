@@ -1,6 +1,8 @@
 // Gamer eSports App
+
 import { db } from "./Firebase.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
 let slideIndex = 0;
 const slides = document.querySelectorAll(".slides");
 
@@ -27,19 +29,30 @@ showSlides();
 const tournaments = [];
 
 async function loadTournaments() {
+
   const querySnapshot = await getDocs(collection(db, "tournaments"));
 
-    querySnapshot.forEach((doc) => {
-        tournaments.push(doc.data());
-          });
-
-            console.log(tournaments);
-            }
-
-            loadTournaments();
-
-document.querySelectorAll(".join-btn").forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    window.location.href = "tournament.html?id=" + index;
+  querySnapshot.forEach((doc) => {
+    tournaments.push(doc.data());
   });
-});
+
+  console.log(tournaments);
+
+  document.querySelectorAll(".join-btn").forEach((btn, index) => {
+
+    btn.addEventListener("click", () => {
+
+      localStorage.setItem(
+        "selectedTournament",
+        JSON.stringify(tournaments[index])
+      );
+
+      window.location.href = "tournament.html";
+
+    });
+
+  });
+
+}
+
+loadTournaments();
