@@ -42,10 +42,17 @@ async function loadTournaments() {
 
     btn.addEventListener("click", () => {
 
-      localStorage.setItem(
-        "selectedTournament",
-        JSON.stringify(tournaments[index])
-      );
+  console.log(index);
+  console.log(tournaments[index]);
+
+  localStorage.setItem(
+    "selectedTournament",
+    JSON.stringify(tournaments[index])
+  );
+
+  window.location.href = "tournament.html";
+
+});
 
       window.location.href = "tournament.html";
 
