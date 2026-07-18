@@ -1,5 +1,6 @@
 // Gamer eSports App
-
+import { db } from "./Firebase.js";
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 let slideIndex = 0;
 const slides = document.querySelectorAll(".slides");
 
@@ -21,24 +22,21 @@ function showSlides() {
   setTimeout(showSlides, 3000);
 }
 
-showSlides();
+showSlides(); hogaya 
 
-const tournaments = [
-  {
-    title: "Free Fire Solo",
-    entry: 20,
-    prize: 500,
-    slots: "48/50",
-    time: "8:00 PM"
-  },
-  {
-    title: "Free Fire Squad",
-    entry: 50,
-    prize: 2000,
-    slots: "20/25",
-    time: "9:00 PM"
-  }
-];
+const tournaments = [];
+
+async function loadTournaments() {
+  const querySnapshot = await getDocs(collection(db, "tournaments"));
+
+    querySnapshot.forEach((doc) => {
+        tournaments.push(doc.data());
+          });
+
+            console.log(tournaments);
+            }
+
+            loadTournaments();
 
 document.querySelectorAll(".join-btn").forEach((btn, index) => {
   btn.addEventListener("click", () => {
