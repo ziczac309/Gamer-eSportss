@@ -1,34 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tournament Details</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tournament Details</title>
+
+<style>
+
+body{
+background:#111;
+color:#fff;
+font-family:Arial;
+padding:20px;
+}
+
+.card{
+background:#1d1d1d;
+padding:20px;
+border-radius:15px;
+}
+
+h1{
+color:#ffd700;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#ffd700;
+border:none;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+margin-top:20px;
+}
+
+</style>
+
 </head>
+
 <body>
 
-<h1>Tournament Details</h1>
+<div class="card">
 
-<h2 id="title"></h2>
+<h1 id="title"></h1>
+
 <p id="entry"></p>
+
 <p id="prize"></p>
+
 <p id="time"></p>
+
 <p id="slots"></p>
 
-<button id="joinBtn">Join Tournament</button>
+<button id="joinBtn">
+JOIN TOURNAMENT
+</button>
+
+</div>
 
 <script>
+
 const tournament = JSON.parse(localStorage.getItem("selectedTournament"));
 
-document.getElementById("title").innerText = tournament.Title;
-document.getElementById("entry").innerText = "Entry: ₹" + tournament.Entry;
-document.getElementById("prize").innerText = "Prize: ₹" + tournament.Prize;
-document.getElementById("time").innerText = "Time: " + tournament.Time;
-document.getElementById("slots").innerText = "Slots: " + tournament.Slots;
+if(tournament){
 
-document.getElementById("joinBtn").onclick = () => {
-  alert("Tournament Join Successfully!");
-};
+document.getElementById("title").innerText=tournament.Title;
+
+document.getElementById("entry").innerText="Entry : ₹"+tournament.Entry;
+
+document.getElementById("prize").innerText="Prize : ₹"+tournament.Prize;
+
+document.getElementById("time").innerText="Time : "+tournament.Time;
+
+document.getElementById("slots").innerText="Slots : "+tournament.Slots;
+
+}else{
+
+document.body.innerHTML="<h2 style='color:red'>Tournament Not Found</h2>";
+
+}
+
+document.getElementById("joinBtn").onclick=function(){
+
+alert("Tournament Joined Successfully!");
+
+}
+
 </script>
 
 </body>
