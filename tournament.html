@@ -67,15 +67,11 @@ const tournament = JSON.parse(localStorage.getItem("selectedTournament"));
 
 if(tournament){
 
-document.getElementById("title").innerText=tournament.Title;
-
-document.getElementById("entry").innerText="Entry : ₹"+tournament.Entry;
-
-document.getElementById("prize").innerText="Prize : ₹"+tournament.Prize;
-
-document.getElementById("time").innerText="Time : "+tournament.Time;
-
-document.getElementById("slots").innerText="Slots : "+tournament.Slots;
+document.getElementById("title").innerText = tournament.title;
+document.getElementById("entry").innerText = "Entry: ₹" + tournament.entry;
+document.getElementById("prize").innerText = "Prize: ₹" + tournament.prize;
+document.getElementById("time").innerText = "Time: " + tournament.time;
+document.getElementById("slots").innerText = "Slots: " + tournament.slots;
 
 }else{
 
