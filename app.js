@@ -37,12 +37,9 @@ async function loadTournaments() {
             }
 
             loadTournaments();
-console.log("JavaScript Loaded");
-  document.querySelectorAll(".join-btn").forEach((btn, index) => {
+
+document.querySelectorAll(".join-btn").forEach((btn, index) => {
   btn.addEventListener("click", () => {
     window.location.href = "tournament.html?id=" + index;
-  });
-});
-);
   });
 });
