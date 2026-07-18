@@ -40,10 +40,12 @@ async function loadTournaments() {
 
 document.querySelectorAll(".join-btn").forEach((btn, index) => {
   btn.addEventListener("click", () => {
-    alert(
-      "Tournament: " + tournaments[index].title +
-      "\nEntry: ₹" + tournaments[index].entry +
-      "\nPrize: ₹" + tournaments[index].prize
-    );
+alert(
+  "Tournament" +
+  "\nEntry: ₹" + tournaments[index].Entry +
+  "\nPrize: ₹" + tournaments[index].Prize +
+  "\nTime: " + tournaments[index].Time +
+  "\nSlots: " + tournaments[index].Slots
+);
   });
 });
