@@ -81,3 +81,6 @@ async function loadTournaments() {
 
 loadTournaments(const querySnapshot = await getDocs(collection(db, "tournaments"));
 console.log(querySnapshot.size););
+querySnapshot.forEach((doc) => {
+    console.log(doc.data());
+});
