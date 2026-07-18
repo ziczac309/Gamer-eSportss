@@ -22,7 +22,7 @@ function showSlides() {
   setTimeout(showSlides, 3000);
 }
 
-showSlides(); hogaya 
+showSlides();
 
 const tournaments = [];
 
