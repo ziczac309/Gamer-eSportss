@@ -1,5 +1,3 @@
-// Gamer eSports App
-
 import { db } from "./Firebase.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
@@ -7,15 +5,10 @@ let slideIndex = 0;
 const slides = document.querySelectorAll(".slides");
 
 function showSlides() {
-  slides.forEach(slide => {
-    slide.style.display = "none";
-  });
+  slides.forEach(slide => slide.style.display = "none");
 
   slideIndex++;
-
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
+  if (slideIndex > slides.length) slideIndex = 1;
 
   if (slides.length > 0) {
     slides[slideIndex - 1].style.display = "block";
@@ -26,33 +19,57 @@ function showSlides() {
 
 showSlides();
 
-const tournaments = [];
-
 async function loadTournaments() {
+
+  const tournamentList = document.getElementById("tournament-list");
+  tournamentList.innerHTML = "";
 
   const querySnapshot = await getDocs(collection(db, "tournaments"));
 
   querySnapshot.forEach((doc) => {
-    tournaments.push(doc.data());
+
+    const t = doc.data();
+
+    tournamentList.innerHTML += `
+      <div class="tournament-card">
+
+        <img src="${t.image}" class="game-banner">
+
+        <div class="card-content">
+
+          <h3>${t.title}</h3>
+
+          <div class="details">
+            <span>💰 Entry: ₹${t.entry}</span>
+            <span>🏆 Prize: ₹${t.prize}</span>
+          </div>
+
+          <div class="details">
+            <span>👥 Slots: ${t.slots}</span>
+            <span>⏰ ${t.time}</span>
+          </div>
+
+          <button class="join-btn">JOIN NOW</button>
+
+        </div>
+
+      </div>
+    `;
+
   });
 
-  console.log(tournaments);
+  const buttons = document.querySelectorAll(".join-btn");
 
-  document.querySelectorAll(".join-btn").forEach((btn, index) => {
+  buttons.forEach((btn, index) => {
 
     btn.addEventListener("click", () => {
 
-  console.log(index);
-  console.log(tournaments[index]);
+      const tournament = querySnapshot.docs[index].data();
 
-  localStorage.setItem(
-    "selectedTournament",
-    JSON.stringify(tournaments[index])
-  );
-
-  window.location.href = "tournament.html";
-
-});
+      localStorage.setItem(
+        "selectedTournament",
+        JSON.stringify(tournament)
+      );
 
       window.location.href = "tournament.html";
 
